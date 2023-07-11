@@ -80,10 +80,10 @@ body {
   font-size: 0.7vw;
 }
 .element .anna-description {
-  font-size: 0.2vw;
+  font-size: 0.25vw;
   position: fixed;
   right: 6vw;
-  bottom: -6.6vw;
+  bottom: 0vw;
   width: 8vw;
   opacity: 0;
   transition: 200ms;
