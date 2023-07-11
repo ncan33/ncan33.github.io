@@ -82,7 +82,7 @@ body {
 .element .anna-description {
   font-size: 0.5vw;
   position: absolute;
-  top: 1vw;
+  bottom: -2vw;
   right: 5vw;
   width: 8vw;
   opacity: 0;
