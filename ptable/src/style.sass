@@ -20,7 +20,7 @@ body
   position: relative
   overflow: hidden
   padding: 2%
-  
+
   > input
     -webkit-appearance: none
     position: fixed
@@ -48,7 +48,7 @@ body
   cursor: pointer
   color: #fff
   transition: 500ms
-  
+
   .overlay
     position: fixed
     z-index: 1
@@ -60,7 +60,7 @@ body
     opacity: 0
     pointer-events: none
     transition: 500ms
-  
+
   .square
     position: absolute
     left: 0
@@ -112,7 +112,7 @@ body
     opacity: 0
     transition: 200ms
     text-align: right
-  
+
   .model
     display: none
     position: absolute
@@ -121,7 +121,7 @@ body
     top: -500%
     bottom: -500%
     transform: scale(0.1)
-    
+
     .orbital
       position: absolute
       left: 0
@@ -131,12 +131,12 @@ body
       border: 5px solid
       border-radius: 50%
       opacity: 0.25
-      
+
       @for $i from 1 through 7
         &:nth-child(#{$i})
           margin: 10% + 5.5 * ($i - 1)
           animation-duration: 40s - 6 * ($i - 1)
-      
+
       .electron
         position: absolute
         left: 0
@@ -171,7 +171,7 @@ body
     opacity: 0
     cursor: pointer
     outline: none
-    
+
     &.activate
       &:hover ~ .square
         z-index: 2
@@ -179,11 +179,11 @@ body
         transition-delay: 0ms
         outline: none
         pointer-events: none
-    
+
       &:checked + input[type="radio"].deactivate
         z-index: 3
         pointer-events: all
-      
+
       &:checked ~ .overlay
         opacity: 0.75
 
@@ -194,7 +194,7 @@ body
         transition-delay: 0ms
         outline: none
         cursor: auto
-        
+
         .label
           transition-duration: 500ms
           transform: scale(0.75)
@@ -207,25 +207,25 @@ body
           display: block
           animation: fade-in
           animation-duration: 1s
-          
+
         .orbital
           animation-name: rotate
           animation-timing-function: linear
           animation-iteration-count: infinite
-    
+
     &.deactivate
       position: fixed
       display: block
       z-index: 1
       opacity: 0
-      pointer-events: none 
-    
+      pointer-events: none
+
       &:checked ~ .square
         z-index: 1
 
-        
+
 // --------------------------------------
-// PLACEHOLDER     
+// PLACEHOLDER
 .placeholder
   position: relative
   z-index: -1
@@ -233,7 +233,7 @@ body
   padding-bottom: 100%
   color: #fff
   transition: 500ms
-  
+
   .square
     position: absolute
     left: 0
@@ -250,12 +250,12 @@ body
 
 
 // --------------------------------------
-// GAP     
+// GAP
 .gap
   position: relative
   padding-bottom: 100%
   transition: 500ms
-  
+
   &::before
     content: ""
     position: absolute
@@ -268,9 +268,9 @@ body
     margin-left: -1px
     color: #fff
     opacity: 0.2
-    
 
-  
+
+
 // --------------------------------------
 // COLORS
 .alkali-metal
@@ -284,7 +284,7 @@ body
 
 .actinoid
   color: $actinoidColor
-  
+
 .transition-metal
   color: $transitionMetalColor
 
@@ -385,19 +385,19 @@ body
   align-items: center
   pointer-events: none
   user-select: none
-  
+
   .row
     position: relative
     display: flex
     width: 100%
     justify-content: space-between
-    
+
     label
       opacity: 0.85
       cursor: pointer
       transition: 120ms
       pointer-events: all
-      
+
       &:hover
         opacity: 1 !important
 
