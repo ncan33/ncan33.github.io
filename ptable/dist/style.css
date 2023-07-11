@@ -81,7 +81,7 @@ body {
 }
 .element .anna-description {
   font-size: 0.2vw;
-  position: absolute;
+  position: fixed;
   right: 6vw;
   bottom: -6.6vw;
   width: 8vw;
