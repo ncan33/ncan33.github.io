@@ -79,6 +79,16 @@ body {
 .element .name {
   font-size: 0.7vw;
 }
+.element .anna-description {
+  font-size: 0.2vw;
+  position: fixed;
+  right: 6vw;
+  bottom: -6.6vw;
+  width: 8vw;
+  opacity: 0;
+  transition: 200ms;
+  text-align: left;
+}
 .element .atomic-mass {
   position: absolute;
   left: 0;
@@ -88,17 +98,6 @@ body {
   text-align: center;
 }
 .element .atomic-weight {
-  position: absolute;
-  right: 0;
-  top: 0;
-  list-style: none;
-  margin: 0;
-  padding: 2px;
-  opacity: 0;
-  transition: 200ms;
-  text-align: right;
-}
-.element .anna-weight {
   position: absolute;
   right: 0;
   top: 0;
@@ -1800,8 +1799,8 @@ body {
   opacity: 1;
   transition: 500ms;
 }
-.element input[type=radio].activate:checked ~ .square .anna-weight {
-  opacity: 1;
+.element input[type=radio].activate:checked ~ .square .anna-description {
+  opacity: 0.8;
   transition: 500ms;
 }
 .element input[type=radio].activate:checked ~ .square .model {
