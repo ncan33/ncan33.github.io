@@ -98,6 +98,17 @@ body {
   transition: 200ms;
   text-align: right;
 }
+.element .anna-weight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  list-style: none;
+  margin: 0;
+  padding: 2px;
+  opacity: 0;
+  transition: 200ms;
+  text-align: right;
+}
 .element .model {
   display: none;
   position: absolute;
@@ -1789,6 +1800,10 @@ body {
   opacity: 1;
   transition: 500ms;
 }
+.element input[type=radio].activate:checked ~ .square .anna-weight {
+  opacity: 1;
+  transition: 500ms;
+}
 .element input[type=radio].activate:checked ~ .square .model {
   display: block;
   animation: fade-in;
@@ -2074,7 +2089,7 @@ body {
   grid-row: 1;
   grid-column-start: 3;
   grid-column-end: 17;
-  font-size: 0.8vw;
+  font-size: 1.2vw;
   line-height: 1.5;
   display: flex;
   align-items: center;
