@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyclist Hand Signaling Detection</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #111;
+    }
+    h1, h2 {
+      font-family: Arial, sans-serif;
+    }
+    video {
+      width: 70%;
+      max-width: 100%;
+      margin: 20px 0;
+      display: block;
+    }
+    .caption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: -12px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Vision-Based Cyclist Hand Signal Detection</h1>
+  <h3><em>by Nejat Can</em></h3>
+  <p>
+    Automated detection of cyclist hand signals can enhance the experience and safety of road users.
+    For instance, it is standard for self-driving cars to detect car turn signals, but cyclists may be overlooked.
+    Another possible application is vision-based traffic light detection. Overlooking cyclist turn signals may result in missed optimizations in traffic flow.
+    Let's explore the viability of detecting hand signals from cyclists using a super lightweight model.
+  </p>
+
+  <h2>Method</h2>
+  <p>
+    I used <em>YOLOv8-Pose</em> with <em>ByteTrack</em> to track cyclists across frames.
+    Pose data was overlaid using <em>OpenCV</em>. Position data noise reduction was performed using Savitzky-Golay filtering.
+    Full code and data available on <a href="https://github.com/ncan33/cyclist-turn-detection" target="_blank">GitHub</a>.
+  </p>
+
+  <h2>Results</h2>
+
+  <video autoplay loop muted playsinline>
+    <source src="clips/signal_clip_000_overlay.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="caption">Figure 1. A cyclist turning. Frame-by-frame pose annotations applied.</div>
+
+  Because each frame is independent, the pose jumps from the cyclist to other humans. To mitigate this issue, let's track each human across frames.
+
+  <video autoplay loop muted playsinline>
+    <source src="clips/signal_clip_000_tracks_overlay.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="caption">Figure 2. Tracking across frames applied to each human.</div>
+
+  Now, we can apply pose estimation to only the turning cyclist.
+
+  <video autoplay loop muted playsinline>
+    <source src="clips/signal_clip_000_pose_id1_overlay.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="caption">Figure 3. Pose estimation only applied to turning cyclist through tracking.</div>
+
+  Looks much better! The pose is stable. Now, let's begin feature extraction to distinguish between signaling and nonsignaling.
+  Cyclists typically signal by extending their arm to the side. We can plot displacement of the hand in the direction perpendicular to the sagittal plane, which I 
+  will refer to as the lateral distance.
+
+  <img src="images/wristDistance0.png" alt="Output visualization of cyclist hand signaling detection" style="width: 75%; max-width: 100%; margin: 20px 0; display: block;">
+  <div class="caption">Figure 4. Lateral distance of right wrist to hip.</div>
+
+  It's quite noisy because YOLOv8-Pose is a super lightweight model. Let's extract the trend using a Savitzky-Golay filter.
+ 
+  <img src="images/wristDistance1.png" alt="Output visualization of cyclist hand signaling detection" style="width: 75%; max-width: 100%; margin: 20px 0; display: block;">
+  <div class="caption">Figure 5. Lateral distance of right wrist to hip with Savitzky-Golay filter smoothing.</div>
+
+  The noise is greatly reduced while the overall shape is preserved. Let's plot this simultaneously with the video and see if it aligns well.
+
+  <video autoplay loop muted playsinline>
+    <source src="clips/signal_clip_000_combined_overlay.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="caption">Figure 6. Lateral distance matched up with the video.</div>
+
+  The peak in the graph aligns well with when the cyclist is signaling. Let's test the model on a different cyclists.
+  
+  <video autoplay loop muted playsinline>
+    <source src="clips/signal_clip_002_combined_overlay.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="caption">Figure 7. Another turning cyclist with lateral distance matched up with the video.</div>
+
+  This peak is also aligned with the signaling. This method can capture hand signals in distance graphs. <strong>What if the cyclist is not signaling while turning?</strong> Will it be flat?
+
+  <video autoplay loop muted playsinline>
+    <source src="clips/signal_clip_100_combined_overlay.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="caption">Figure 8. A turning cyclist who is not using a hand signal.</div>
+
+  This cyclist is riding very steadily and not signaling. There is little fluctuation in lateral distance.
+  This suggests that lateral distance is a good indicator of hand signaling in cyclists.
+
+  <h2>Discussion</h2>
+  <p>
+    Vision-based hand signaling detection in cyclists is feasible even with an extremely lightweight model like YOLOv8-Pose.
+    Accuracy could be drastically improved with a more complex model. My goal in this experiment was to demonstrate basic feasibility.
+    Self-driving vehicles and traffic light detection systems should consider adding this feature to their systems.
+    Full code and data available on <a href="https://github.com/ncan33/cyclist-turn-detection" target="_blank">GitHub</a>.
+  </p>
+
+</tbody></table>
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:0px">
+        <br>Return to my <a href="https://ncan33.github.io/">home page</a>.
+      </p>
+    </td>
+  </tr>
+</tbody></table>
+
+</body>
+</html>
