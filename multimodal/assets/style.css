@@ -223,7 +223,7 @@ html[dir=rtl] .app__logo-wrapper {
   width: 176.4px;
 }
 .app__button-ios img {
-  width: 140px;
+  width: 170px;
 }
 .app__button-web {
   margin-left: 12px;
@@ -236,7 +236,7 @@ html[dir=rtl] .app__logo-wrapper {
     width: 126px;
   }
   .app__button-ios img {
-    width: 100px;
+    width: 220px;
   }
   .app__button-web {
     margin-left: 8px;
