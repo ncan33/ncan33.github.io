@@ -226,13 +226,20 @@ span.highlight {
 
 /* Mobile / smaller screens */
 @media (max-width: 767px) {
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   body {
-    font-size: 11px;
+    font-size: 12px;
     background-color: #f8f9fa;
     line-height: 1.5;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
   
   /* Main container adjustments for mobile */
@@ -249,6 +256,15 @@ span.highlight {
     margin: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Force all elements to stay within viewport */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   
   /* Profile section - stacked layout */
@@ -274,28 +290,36 @@ span.highlight {
     width: 60% !important;
     margin: 0 auto !important;
     display: block !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure all images stay within bounds */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
   }
   
   /* Typography scaling for mobile */
   name {
-    font-size: 22px;
+    font-size: 24px;
     text-align: center !important;
     display: block !important;
     width: 100% !important;
   }
   
   heading {
-    font-size: 16px;
+    font-size: 17px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
   
   p, td, th, tr, a {
-    font-size: 11px;
+    font-size: 12px;
   }
   
   strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   
   /* Bullet point adjustments for mobile */
@@ -339,7 +363,7 @@ span.highlight {
   
   /* Links in experience descriptions */
   span[style*="color: #636363"] {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.4;
   }
   
@@ -360,18 +384,18 @@ span.highlight {
 /* Tablet / medium screens */
 @media (min-width: 481px) and (max-width: 767px) {
   body {
-    font-size: 12px;
+    font-size: 13px;
   }
   
   name {
-    font-size: 24px;
+    font-size: 26px;
     text-align: center !important;
     display: block !important;
     width: 100% !important;
   }
   
   heading {
-    font-size: 18px;
+    font-size: 19px;
   }
   
   img[alt="profile photo"] {
@@ -398,18 +422,18 @@ span.highlight {
 /* Very small screens */
 @media (max-width: 480px) {
   body {
-    font-size: 10px;
+    font-size: 11px;
   }
   
   name {
-    font-size: 20px;
+    font-size: 22px;
     text-align: center !important;
     display: block !important;
     width: 100% !important;
   }
   
   heading {
-    font-size: 14px;
+    font-size: 15px;
   }
   
   /* Bullet point adjustments for very small screens */
