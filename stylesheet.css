@@ -333,7 +333,7 @@ span.highlight {
   
   li {
     margin-bottom: 8px !important;
-    padding-left: 5px !important;
+    padding-left: 1.5px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -413,7 +413,7 @@ span.highlight {
   }
   
   li {
-    padding-left: 8px !important;
+    padding-left: 4px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -446,7 +446,7 @@ span.highlight {
   }
   
   li {
-    padding-left: 4px !important;
+    padding-left: 1px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
