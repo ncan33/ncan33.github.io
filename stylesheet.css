@@ -227,7 +227,7 @@ span.highlight {
 /* Mobile / smaller screens */
 @media (max-width: 767px) {
   body {
-    font-size: 14px;
+    font-size: 12px;
     background-color: #f8f9fa;
     line-height: 1.5;
     margin: 0;
@@ -267,22 +267,24 @@ span.highlight {
   
   /* Typography scaling for mobile */
   name {
-    font-size: 28px;
-    text-align: center;
+    font-size: 24px;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
   }
   
   heading {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
   
   p, td, th, tr, a {
-    font-size: 14px;
+    font-size: 12px;
   }
   
   strong {
-    font-size: 14px;
+    font-size: 12px;
   }
   
   /* Navigation links - mobile friendly */
@@ -309,7 +311,7 @@ span.highlight {
   
   /* Links in experience descriptions */
   span[style*="color: #636363"] {
-    font-size: 13px;
+    font-size: 11px;
     line-height: 1.4;
   }
   
@@ -330,15 +332,18 @@ span.highlight {
 /* Tablet / medium screens */
 @media (min-width: 481px) and (max-width: 767px) {
   body {
-    font-size: 15px;
+    font-size: 13px;
   }
   
   name {
-    font-size: 30px;
+    font-size: 26px;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
   }
   
   heading {
-    font-size: 22px;
+    font-size: 20px;
   }
   
   img[alt="profile photo"] {
@@ -350,15 +355,18 @@ span.highlight {
 /* Very small screens */
 @media (max-width: 480px) {
   body {
-    font-size: 13px;
+    font-size: 11px;
   }
   
   name {
-    font-size: 24px;
+    font-size: 22px;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
   }
   
   heading {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   img[alt="profile photo"] {
