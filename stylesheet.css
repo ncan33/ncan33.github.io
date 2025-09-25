@@ -227,7 +227,7 @@ span.highlight {
 /* Mobile / smaller screens */
 @media (max-width: 767px) {
   body {
-    font-size: 12px;
+    font-size: 11px;
     background-color: #f8f9fa;
     line-height: 1.5;
     margin: 0;
@@ -267,24 +267,35 @@ span.highlight {
   
   /* Typography scaling for mobile */
   name {
-    font-size: 24px;
+    font-size: 22px;
     text-align: center !important;
     display: block !important;
     width: 100% !important;
   }
   
   heading {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
   
   p, td, th, tr, a {
-    font-size: 12px;
+    font-size: 11px;
   }
   
   strong {
-    font-size: 12px;
+    font-size: 11px;
+  }
+  
+  /* Bullet point adjustments for mobile */
+  ul {
+    padding-left: 15px !important;
+    margin-left: 0 !important;
+  }
+  
+  li {
+    margin-bottom: 8px !important;
+    padding-left: 5px !important;
   }
   
   /* Navigation links - mobile friendly */
@@ -311,7 +322,7 @@ span.highlight {
   
   /* Links in experience descriptions */
   span[style*="color: #636363"] {
-    font-size: 11px;
+    font-size: 10px;
     line-height: 1.4;
   }
   
@@ -332,41 +343,59 @@ span.highlight {
 /* Tablet / medium screens */
 @media (min-width: 481px) and (max-width: 767px) {
   body {
-    font-size: 13px;
+    font-size: 12px;
   }
   
   name {
-    font-size: 26px;
+    font-size: 24px;
     text-align: center !important;
     display: block !important;
     width: 100% !important;
   }
   
   heading {
-    font-size: 20px;
+    font-size: 18px;
   }
   
   img[alt="profile photo"] {
     max-width: 250px !important;
     width: 50% !important;
   }
+  
+  /* Bullet point adjustments for tablet */
+  ul {
+    padding-left: 20px !important;
+  }
+  
+  li {
+    padding-left: 8px !important;
+  }
 }
 
 /* Very small screens */
 @media (max-width: 480px) {
   body {
-    font-size: 11px;
+    font-size: 10px;
   }
   
   name {
-    font-size: 22px;
+    font-size: 20px;
     text-align: center !important;
     display: block !important;
     width: 100% !important;
   }
   
   heading {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  
+  /* Bullet point adjustments for very small screens */
+  ul {
+    padding-left: 12px !important;
+  }
+  
+  li {
+    padding-left: 4px !important;
   }
   
   img[alt="profile photo"] {
