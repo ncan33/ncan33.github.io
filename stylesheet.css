@@ -172,9 +172,9 @@ span.highlight {
 /* Desktop / larger screens */
 @media (min-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 14px;
     background-color: white;
-    line-height: 1.6;
+    line-height: 1.15;
   }
   
   /* Main container adjustments for desktop */
@@ -197,19 +197,19 @@ span.highlight {
   
   /* Typography scaling for desktop */
   name {
-    font-size: 36px;
+    font-size: 30px;
   }
   
   heading {
-    font-size: 24px;
+    font-size: 20px;
   }
   
   p, td, th, tr, a {
-    font-size: 16px;
+    font-size: 14px;
   }
   
   strong {
-    font-size: 16px;
+    font-size: 14px;
   }
   
   /* Navigation links spacing */
@@ -234,7 +234,7 @@ span.highlight {
   body {
     font-size: 12px;
     background-color: #f8f9fa;
-    line-height: 1.5;
+    line-height: 1.15;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -364,7 +364,7 @@ span.highlight {
   /* Links in experience descriptions */
   span[style*="color: #636363"] {
     font-size: 11px;
-    line-height: 1.4;
+    line-height: 1.0;
   }
   
   /* Button adjustments for mobile */
@@ -381,43 +381,6 @@ span.highlight {
   }
 }
 
-/* Tablet / medium screens */
-@media (min-width: 481px) and (max-width: 767px) {
-  body {
-    font-size: 13px;
-  }
-  
-  name {
-    font-size: 26px;
-    text-align: center !important;
-    display: block !important;
-    width: 100% !important;
-  }
-  
-  heading {
-    font-size: 19px;
-  }
-  
-  img[alt="profile photo"] {
-    max-width: 250px !important;
-    width: 50% !important;
-  }
-  
-  /* Bullet point adjustments for tablet */
-  ul {
-    padding-left: 20px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box;
-  }
-  
-  li {
-    padding-left: 4px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-}
 
 /* Very small screens */
 @media (max-width: 480px) {
