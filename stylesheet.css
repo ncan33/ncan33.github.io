@@ -214,8 +214,8 @@ span.highlight {
   
   /* Navigation links spacing */
   p[style*="text-align:center"] a {
-    margin: 0 8px;
-    padding: 4px 8px;
+    margin: 0 4px;
+    padding: 2px 2px;
   }
   
   /* Section spacing */
@@ -345,8 +345,8 @@ span.highlight {
   }
   
   p[style*="text-align:center"] a {
-    margin: 0 4px;
-    padding: 2px 4px;
+    margin: 0 1px;
+    padding: 2px 2px;
   }
   
   /* Section spacing for mobile */
@@ -420,7 +420,7 @@ span.highlight {
   }
   
   p[style*="text-align:center"] a {
-    margin: 0 2px;
-    padding: 2px 4px;
+    margin: 0 1px;
+    padding: 2px 2px;
   }
 }
