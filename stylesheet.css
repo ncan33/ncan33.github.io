@@ -222,6 +222,11 @@ span.highlight {
   td[style*="padding:5px"] {
     padding: 20px !important;
   }
+  
+  /* List item spacing for desktop */
+  li {
+    margin-bottom: 4px;
+  }
 }
 
 /* Mobile / smaller screens */
